@@ -6,7 +6,6 @@
 Console.WriteLine("Введите количество чисел:");
 int number = Convert.ToInt32(Console.ReadLine());
 
-
 int[] array = new int[number];
 int i = 1;
 while (i - 1 < number)
@@ -15,7 +14,6 @@ while (i - 1 < number)
     array[i - 1] = Convert.ToInt32(Console.ReadLine());
     i++;
 }
-
 
 int AboveZero(int[] arr)
 {
@@ -32,7 +30,6 @@ int AboveZero(int[] arr)
     return count;
 }
 
-
 void PrintArray(int[] array)
 {
     Console.Write("[");
@@ -43,7 +40,6 @@ void PrintArray(int[] array)
     }
     Console.WriteLine("]");
 }
-
 
 int result = AboveZero(array);
 PrintArray(array);
