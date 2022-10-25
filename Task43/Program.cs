@@ -3,31 +3,37 @@
 // b1 = 2, k1 = 5, b2 = 4, k2 = 9 -> (-0,5; -0,5)
 
 Console.WriteLine("Введите b1:");
-double b1 = Convert.ToInt32(Console.ReadLine());
+double b1 = Convert.ToDouble(Console.ReadLine());
 
 Console.WriteLine("Введите k1:");
-double k1 = Convert.ToInt32(Console.ReadLine());
+double k1 = Convert.ToDouble(Console.ReadLine());
 
 Console.WriteLine("Введите b2:");
-double b2 = Convert.ToInt32(Console.ReadLine());
+double b2 = Convert.ToDouble(Console.ReadLine());
 
 Console.WriteLine("Введите k2:");
-double k2 = Convert.ToInt32(Console.ReadLine());
+double k2 = Convert.ToDouble(Console.ReadLine());
+
+if (k2 - k1 == 0)
+{
+    Console.WriteLine($"Прямые не пересекаются в точке, они параллельны");
+}
+else
+{
+    double coordinateX = CoordinateX(b1, k1, b2, k2);
+    double coordinateY = CoordinateY(b1, k1, b2, k2);
+    Console.WriteLine($"Точка пересечения прямых ({coordinateX} ; {coordinateY})");
+}
 
 double CoordinateX(double meaningb1, double meaningk1, double meaningb2, double meaningk2)
 {
-    double X = (meaningb2 - meaningb1) / (meaningk1 - meaningk2);
+    double X = Math.Round((meaningb2 - meaningb1) / (meaningk1 - meaningk2), 3);
     return X;
 }
 
 double CoordinateY(double meaningb1, double meaningk1, double meaningb2, double meaningk2)
 {
-    double Y = meaningk1 * ((meaningb2 - meaningb1) / (meaningk1 - meaningk2)) + meaningb1;
+    double Y = Math.Round(meaningk1 * ((meaningb2 - meaningb1) / (meaningk1 - meaningk2)) + meaningb1, 3);
     return Y;
 }
-
- double coordinateX = CoordinateX (b1, k1, b2, k2);
- double coordinateY = CoordinateY (b1, k1, b2, k2);
-
-Console.WriteLine($"({coordinateX} ; {coordinateY})");
 
